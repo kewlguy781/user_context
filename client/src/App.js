@@ -2,8 +2,8 @@ import React from "react";
 import { Route, Switch } from "react-router-dom";
 import Home from "./components/Home";
 import NavBar from "./components/Navbar";
-import ThingsDemo from "./things/ThingsDemo";
 import { Container } from "semantic-ui-react";
+import UserProfile from "./components/UserProfile";
 
 function App() {
   return (
@@ -12,7 +12,7 @@ function App() {
       <Container>
         <Switch>
           <Route exact path="/" component={Home} />
-          <Route exact path="/thingsDemo" component={ThingsDemo} />
+          <Route exact path="/user/profile" component={UserProfile} />
         </Switch>
       </Container>
     </>
