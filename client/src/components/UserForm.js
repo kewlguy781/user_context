@@ -1,12 +1,13 @@
 import React from "react";
 import { Form } from "semantic-ui-react";
+import { UserConsumer } from "../providers/UserProvider";
 
 // const UserForm = () => {
 //   const [name, setName] = useState("");
 //   const [email, setEmail] = useState("");
 
 class UserForm extends React.Component {
-  state = { name: "", email: "" };
+  state = { name: this.props.name, email: this.props.email };
 
   handleChange = (e, { name, value }) => {
     this.setState({ [name]: value });
@@ -15,6 +16,7 @@ class UserForm extends React.Component {
   handleSubmit = (e) => {
     e.preventDefault();
     console.log("HELLO JON");
+    this.props.updateUserProp(this.state);
   };
 
   render() {
@@ -41,4 +43,21 @@ class UserForm extends React.Component {
   }
 }
 
-export default UserForm;
+// export default UserForm;
+
+const ConnectedUserForm = (props) => {
+  return (
+    <UserConsumer>
+      {(value) => (
+        <UserForm //(then in User, change from UserForm to ConnectedUserForm)
+          {...props} // passing any props that were given prevoulsy
+          name={value.name}
+          email={value.email}
+          updateUserProp={value.updateUser}
+        />
+      )}
+    </UserConsumer>
+  );
+};
+
+export default ConnectedUserForm;

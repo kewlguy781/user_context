@@ -1,15 +1,17 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Card } from "semantic-ui-react";
+import { UserContext } from "../providers/UserProvider";
 
 const User = () => {
+  const auth = useContext(UserContext);
   return (
     <Card>
       <Card.Content>
-        <Card.Header>USER</Card.Header>
-        <Card.Meta>AVATAR</Card.Meta>
+        <Card.Header>{auth.name}</Card.Header>
+        <Card.Meta>{auth.avatar}</Card.Meta>
       </Card.Content>
       <Card.Content>
-        <p>EMAIL</p>
+        <p>{auth.email}</p>
       </Card.Content>
     </Card>
   );

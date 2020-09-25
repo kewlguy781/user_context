@@ -14,7 +14,7 @@ class UserProvider extends React.Component {
   state = {
     name: "Jon the Man",
     email: "jon@devpoints.com",
-    // avatar: " :D ",
+    avatar: " :D ",
     updateUser: (u) => this.updateUser(u), // this is a new function from james' note?
   };
 
