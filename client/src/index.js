@@ -7,11 +7,15 @@ import * as serviceWorker from "./serviceWorker";
 
 import { BrowserRouter } from "react-router-dom";
 import "semantic-ui-css/semantic.min.css";
+//Uncomment below when you are done with UserProvider file
+import UserProvider from "./providers/UserProvider";
 
 ReactDOM.render(
-  <BrowserRouter>
-    <App />
-  </BrowserRouter>,
+  <UserProvider>
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
+  </UserProvider>,
   document.getElementById("root")
 );
 

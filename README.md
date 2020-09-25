@@ -1,28 +1,22 @@
-# Starter Proj
+Context Assignment
 
-## Steps to setup and run
+Using the React Context API, you are to create a small application that allows a user to create an account.
 
-1. `bundle install`
-2. in database.yml change name of database react_rails_router_starter_f20 to **project-name**
-3. `rails db:create db:migrate db:seed`
-4. `rails s -p 3001`
+Basic Objectives
+Create a new React application.
+Using the React Context API, create a new provider called UserProvider. (basically todays lecture)
+User will have an email, firstName, lastName, avatar, or whatever else you want.
+Feel free to hard code the users values to start.
+Using React Router, render a component to display the User's info.
+Be able to update the user's info and have it update the throughout the application.
+Style the application.
 
-5. `cd client && yarn`
-6. `yarn start`
+Bonus Objectives
+Pretend our application has a page that shows a list of all the user's **\_\_**. (this can be anything you want: pets, favorite foods, hobbies, friends, etc.)
 
-### handle git
-
-- you can either remove the remote and add you own, or you can remove the git repo, remove the
-  remote keeps the commit history from starter project, and rm -rf .git is going to complete remove
-  it/
-
-1.  - remove origin `git remote rm origin`
-    - git add remote origin to new repo
-
-2.  or
-    `rm -rf .git`
-    `git init`
-    `git remote add origin new githib page`
-    `git add .`
-    `git commit -m`
-    `git push origin master`
+Create a new Provider based on your choice above.
+Create a new route that will render the list from your provider.
+Be able to add new items to that list.
+Be able to remove items from the list.
+Be able to update items from the list.
+hookup to rails
